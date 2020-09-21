@@ -9,12 +9,10 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
 
 import { AppRoutingModule } from './app-routing.module';
 import { HeroesModule } from './heroes/heroes.module';
-import {AdminModule} from './admin/admin.module';
 
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CrisisCenterModule} from './crisis-center/crises-center.module';
-import { LoginComponent } from './auth/login/login.component';
 import {AuthModule} from './auth/auth.module';
 
 
@@ -27,15 +25,13 @@ import {AuthModule} from './auth/auth.module';
     FormsModule,
     HeroesModule,
     CrisisCenterModule,
-    AdminModule,
     AuthModule,
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
     ComposeMessageComponent,
-    PageNotFoundComponent,
-    LoginComponent
+    PageNotFoundComponent
   ],
   bootstrap: [ AppComponent ]
 })

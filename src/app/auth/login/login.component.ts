@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import {NavigationExtras, Router} from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -30,6 +30,16 @@ export class LoginComponent {
 
         // Redirect the user
         this.router.navigate([redirectUrl]);
+
+        // Set our navigation extras object
+// that passes on our global query params and fragment
+        const navigationExtras: NavigationExtras = {
+          queryParamsHandling: 'preserve',
+          preserveFragment: true
+        };
+
+// Redirect the user
+        this.router.navigate([redirectUrl], navigationExtras);
       }
     });
   }
@@ -38,4 +48,8 @@ export class LoginComponent {
     this.authService.logout();
     this.setMessage();
   }
+
+
+
+
 }
